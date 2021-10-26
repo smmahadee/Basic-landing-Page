@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root {
+  --primary-color: #535c68;
+  --secondary-color: #f6e58d;
+  --color-white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  transition: transform 0.3s ease;
+  margin: 0;
+}
+
+.show-nav {
+  transform: translateX(200px);
+}
+
+nav {
+  background-color: var(--primary-color);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100vh;
+  transform: translateX(-100%);
+  z-index: 100;
+}
+
+nav .logo {
+  padding: 20px;
+  text-align: center;
+}
+
+nav .logo img {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav ul li {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav ul li:first-of-type {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+nav ul li:hover {
+  color: var(--secondary-color);
+}
+
+/* Styling header*/
+
+header {
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 30px;
+}
+
+header button {
+  padding: 5px 8px;
+  font-size: 18px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+}
+
+.toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+/* Styling container */
+
+.container {
+  padding: 20px;
+  max-width: 100%;
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* Styling modal */
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+.modal-container.show-modal {
+  display: block;
+  animation-name: modalOpen;
+  animation-duration: 1s;
+}
+
+.modal {
+  background-color: var(--color-white);
+  max-width: 100%;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  border-radius: 5px;
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  padding: 15px 10px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: var(--color-white);
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content div {
+  margin-bottom: 15px;
+}
+
+.modal-content div label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal-content div input {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.555);
+  border-radius: 2px;
+}
+
+.submit-btn {
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.close-btn {
+  position: fixed;
+  right: 10px;
+  top: 15px;
+  background-color: transparent;
+  color: var(--color-white);
+  border: none;
+}
+
+/* animation */
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
